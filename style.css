@@ -70,14 +70,15 @@ ul {
 
 /* Style for the resume button */
 .resume-button {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: white;
     background-color: #333;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 1rem;
+    margin: 1rem auto;
     transition: background-color 0.3s ease;
 }
 

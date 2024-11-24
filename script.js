@@ -67,3 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
     headerTitle.innerHTML = `${decoration} Alyssa Davidson ${decoration}`;
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+});
+
+  

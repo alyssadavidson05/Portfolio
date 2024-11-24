@@ -8,20 +8,23 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     text-align: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     background: #ffffff; /* Classy white background */
-    border-bottom: 2px solid #ccc; /* Subtle border at the bottom */
+    border-bottom: 1px solid #ccc; /* Subtle border at the bottom */
     color: #333; /* Elegant dark text */
-    position: relative;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* Main title */
 header h1 {
-    font-size: 3rem; /* Elegant large font */
+    font-size: 2rem; /* Elegant large font */
     font-family: 'Playfair Display', serif; /* A sophisticated serif font */
     font-weight: bold;
-    margin: 0;
+    margin: 00.5rem 0;
     color: #222; /* Deep elegant text color */
     letter-spacing: 2px; /* Subtle letter spacing for elegance */
     text-transform: uppercase; /* Classy all caps */
@@ -29,9 +32,9 @@ header h1 {
 
 /* Subtitle */
 header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif; /* Pairing serif with sans-serif */
-    margin: 0.5rem 0 0;
+    margin: 0;
     color: #555; /* Softer text color for contrast */
     font-style: italic; /* Adds a touch of elegance */
 }
@@ -49,6 +52,9 @@ header::after {
 
 
 nav {
+    position: sticky;
+    top: 186px;
+    z-index: 10;
     background: #f8f8f8; /* Subtle, clean background */
     border-top: 1px solid #ccc; /* Matches the header's style */
     border-bottom: 1px solid #ccc; /* Adds subtle definition */
@@ -96,6 +102,18 @@ nav ul li a.active {
 
     nav ul li {
         margin: 0.5rem 0; /* Adjust spacing for vertical layout */
+    }
+
+    header {
+        padding: 1rem 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
     }
 }
 
@@ -152,7 +170,6 @@ ul {
 .resume-button:hover {
     background-color: #555;
 }
-
 
 /* Styling for the Projects section */
 #projects {
@@ -211,6 +228,64 @@ ul {
 
 iframe {
     border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section Styling */
+#features {
+    text-align: center;
+    padding: 2rem;
+    background: #f9f9f9; /* Light background for separation */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 2rem;
+}
+
+#features h2 {
+    font-family: 'Playfair Display', serif; /* Classy serif font */
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card {
+    text-align: left;
+    background: white;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.feature-card ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.feature-preview {
+    text-align: center;
+}
+
+.feature-preview img {
+    max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

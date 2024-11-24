@@ -76,4 +76,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-  
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".carousel-image");
+    const indicators = document.querySelectorAll(".indicator");
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    let current = 0;
+
+    function updateCarousel() {
+        images.forEach((img, index) => {
+            img.classList.toggle("active", index === current);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index === current);
+        });
+    }
+
+    prev.addEventListener("click", () => {
+        current = (current - 1 + images.length) % images.length;
+        updateCarousel();
+    });
+
+    next.addEventListener("click", () => {
+        current = (current + 1) % images.length;
+        updateCarousel();
+    });
+
+    indicators.forEach((indicator) => {
+        indicator.addEventListener("click", () => {
+            current = parseInt(indicator.dataset.index, 10);
+            updateCarousel();
+        });
+    });
+
+    updateCarousel(); // Initialize the carousel
+});

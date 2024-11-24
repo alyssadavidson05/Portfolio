@@ -95,25 +95,24 @@ nav ul li a.active {
 }
 
 @media (max-width: 768px) {
+    header {
+        padding: 1rem 0; /* Reduce padding for mobile */
+    }
+
+    nav {
+        padding: 0.3rem 0; /* Compact navigation padding */
+    }
+
     nav ul {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items */
+        flex-direction: column; /* Stack links vertically on small screens */
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Adjust spacing for vertical layout */
+        margin: 0.5rem 0; /* Add space between stacked items */
     }
 
-    header {
-        padding: 1rem 0;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
+    nav ul li a {
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
     }
 }
 

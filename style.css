@@ -1,3 +1,7 @@
+html {
+    scroll-padding-top: 240px; /* Adjust to match the height of your sticky header */
+  }
+  
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -55,6 +59,7 @@ nav {
     position: sticky;
     top: 186px;
     z-index: 10;
+    padding: 0.5rem 0;
     background: #f8f8f8; /* Subtle, clean background */
     border-top: 1px solid #ccc; /* Matches the header's style */
     border-bottom: 1px solid #ccc; /* Adds subtle definition */
@@ -70,7 +75,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 1.5rem; /* Space between nav items */
+    margin: 0 1rem; /* Space between nav items */
 }
 
 nav ul li a {
@@ -94,25 +99,48 @@ nav ul li a.active {
     border-bottom: 2px solid #222;
 }
 
+#menu-toggle {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
 @media (max-width: 768px) {
     header {
         padding: 1rem 0; /* Reduce padding for mobile */
     }
 
     nav {
-        padding: 0.3rem 0; /* Compact navigation padding */
+        padding: 0.3rem 0; /* Compact padding */
     }
 
     nav ul {
-        flex-direction: column; /* Stack links vertically on small screens */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        display: none; /* Hide by default for mobile */
+    }
+
+    #menu-toggle {
+        display: inline-block; /* Show menu button */
+    }
+
+    #menu.hidden {
+        display: flex; /* Show menu when button is clicked */
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Add space between stacked items */
+        margin: 0.5rem 0; /* Space between vertical links */
     }
 
     nav ul li a {
-        font-size: 0.9rem; /* Slightly smaller font for mobile */
+        font-size: 1rem; /* Keep font readable */
     }
 }
 

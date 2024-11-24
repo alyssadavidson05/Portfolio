@@ -249,6 +249,76 @@ ul {
     background-color: #555;
 }
 
+.carousel {
+    position: relative;
+    max-width: 600px; /* Carousel width */
+    aspect-ratio: 16 / 16; /* Maintain aspect ratio */
+    overflow: hidden;
+    border-radius: 8px; /* Optional styling */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    margin: 0 auto;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Indicators in the top-right corner */
+.carousel-indicators {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 20px; /* Rounded corners for a pill shape */
+    z-index: 10; /* Ensure visibility */
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Contrasting color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: white; /* Brighter color for active state */
+}
+
+
 .letter {
     margin-bottom: 2rem;
 }
@@ -261,50 +331,59 @@ iframe {
 
 /* Features Section Styling */
 #features {
-    text-align: center;
-    padding: 2rem;
-    background: #f9f9f9; /* Light background for separation */
-    border-radius: 10px;
+    max-width: 1200px; /* Match width with Projects section */
+    margin: 2rem auto; /* Center and space the section */
+    padding: 1rem; /* Add some padding for spacing */
+    background-color: white; /* Lighter background for contrast with cards */
+    border-radius: 10px; /* Rounded corners for consistency */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    margin-top: 2rem;
+    text-align: center;
 }
 
 #features h2 {
-    font-family: 'Playfair Display', serif; /* Classy serif font */
+    font-family: 'Playfair Display', serif; /* Consistent font */
     font-size: 2rem;
-    color: #333;
+    color: #333; /* Header color to match Projects */
     margin-bottom: 1.5rem;
 }
 
 .feature-card {
-    text-align: left;
-    background: white;
-    padding: 1.5rem;
-    margin: 1rem auto;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Darker background for cards */
+    border: 1px solid #ddd; /* Border for subtle definition */
+    border-radius: 10px; /* Rounded corners for uniformity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card shadow for a raised effect */
+    padding: 1.5rem; /* Add padding inside cards */
+    margin-bottom: 1.5rem; /* Space between cards */
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #333; /* Match Projects header color */
     margin-bottom: 0.5rem;
 }
 
 .feature-card p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555;
+    color: #555; /* Consistent text color */
     margin-bottom: 1rem;
+    text-align: center; /* Align paragraphs for readability */
 }
 
 .feature-card ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    color: #555;
+    list-style-type: disc; /* Standard bullet points */
+    padding-left: 1.5rem; /* Space for the bullet point alignment */
+    color: #555; /* Text color for bullet items */
     margin-bottom: 1rem;
+    text-align: left; /* Align bullets with text */
 }
 
 .feature-preview {

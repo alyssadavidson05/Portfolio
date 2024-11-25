@@ -115,20 +115,20 @@ nav ul li a.active {
 @media (max-width: 768px) {
     /* Header */
     header {
-        padding: 0.3rem 0; /* Minimize padding further */
+        padding: 0.1rem 0; /* Minimize padding further */
     }
 
     header h1 {
-        font-size: 1.2rem; /* Reduce main title size */
+        font-size: 0.8rem; /* Reduce main title size */
     }
 
     header p {
-        font-size: 0.8rem; /* Reduce subtitle size */
+        font-size: 0.4rem; /* Reduce subtitle size */
     }
 
     /* Navigation Bar */
     nav {
-        top: 50px; /* Adjust based on header height */
+        top: 75px; /* Adjust based on header height */
         padding: 0.3rem 0; /* Compact navigation */
     }
 

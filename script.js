@@ -68,12 +68,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+    let lastScrollY = window.scrollY;
 
-    menuToggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > lastScrollY) {
+            // Scrolling down - hide nav
+            nav.classList.add("hidden");
+            nav.classList.remove("visible");
+        } else {
+            // Scrolling up - show nav
+            nav.classList.add("visible");
+            nav.classList.remove("hidden");
+        }
+
+        lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener("scroll", handleScroll);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

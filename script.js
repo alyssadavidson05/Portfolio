@@ -75,20 +75,24 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleScroll() {
         const currentScrollY = window.scrollY;
 
-        if (currentScrollY > lastScrollY) {
-            // Scrolling down - hide nav
-            nav.classList.add("hidden");
-            nav.classList.remove("visible");
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            // Scrolling down - hide header and nav
+            header.style.transform = "translateY(-100%)";
+            nav.style.transform = "translateY(-100%)";
+            nav.style.transform = "translateX(-100%)";
         } else {
-            // Scrolling up - show nav
-            nav.classList.add("visible");
-            nav.classList.remove("hidden");
+            // Scrolling up - show header and nav
+            header.style.transform = "translateY(0)";
+            nav.style.transform = "translateY(0)";
+            nav.style.transform = "translateX(0)";
         }
 
         lastScrollY = currentScrollY;
     }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", () => {
+        window.requestAnimationFrame(handleScroll);
+    });
 });
 
 document.addEventListener("DOMContentLoaded", () => {

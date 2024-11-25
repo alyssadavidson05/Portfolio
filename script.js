@@ -70,29 +70,45 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
     const nav = document.querySelector("nav");
+    const combinedHeight = header.offsetHeight + nav.offsetHeight;
     let lastScrollY = window.scrollY;
+    let isFixed = false;
 
     function handleScroll() {
         const currentScrollY = window.scrollY;
 
-        if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            // Scrolling down - hide header and nav
-            header.style.transform = "translateY(-100%)";
-            nav.style.transform = "translateY(-100%)";
-            nav.style.transform = "translateX(-100%)";
+        if (currentScrollY > combinedHeight) {
+            if (currentScrollY > lastScrollY && isFixed) {
+                // Scrolling down - let header and nav scroll naturally
+                header.style.position = "static";
+                header.style.width = "100%"; // Reset width
+                nav.style.position = "static";
+                nav.style.width = "100%"; // Reset width
+                isFixed = false;
+            } else if (currentScrollY < lastScrollY && !isFixed) {
+                // Scrolling up - fix header and nav to top
+                header.style.position = "fixed";
+                header.style.top = "0";
+                header.style.width = "100%"; // Ensure full width
+                nav.style.position = "fixed";
+                nav.style.top = `${header.offsetHeight}px`; // Position below header
+                nav.style.width = "100%"; // Ensure full width
+                isFixed = true;
+            }
         } else {
-            // Scrolling up - show header and nav
-            header.style.transform = "translateY(0)";
-            nav.style.transform = "translateY(0)";
-            nav.style.transform = "translateX(0)";
+            // Before scrolling past header and nav
+            header.style.position = "relative";
+            header.style.width = "100%"; // Reset to full width
+            nav.style.position = "relative";
+            nav.style.top = "0"; // Reset nav position
+            nav.style.width = "100%"; // Reset to full width
+            isFixed = false;
         }
 
         lastScrollY = currentScrollY;
     }
 
-    window.addEventListener("scroll", () => {
-        window.requestAnimationFrame(handleScroll);
-    });
+    window.addEventListener("scroll", handleScroll);
 });
 
 document.addEventListener("DOMContentLoaded", () => {

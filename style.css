@@ -114,33 +114,31 @@ nav ul li a.active {
 
 @media (max-width: 768px) {
     header {
-        padding: 1rem 0; /* Reduce padding for mobile */
+        padding: 0.5rem; /* Smaller padding on mobile */
+        font-size: 0.9rem; /* Reduce text size */
     }
 
     nav {
-        padding: 0.3rem 0; /* Compact padding */
+        top: 50px; /* Adjust nav position relative to smaller header */
+    }
+
+    nav.hidden {
+        transform: translateY(-100%); /* Hide nav off-screen */
+        opacity: 0;
+    }
+
+    nav.visible {
+        transform: translateY(0); /* Show nav */
+        opacity: 1;
     }
 
     nav ul {
         flex-direction: column; /* Stack links vertically */
-        align-items: center;
-        display: none; /* Hide by default for mobile */
-    }
-
-    #menu-toggle {
-        display: inline-block; /* Show menu button */
-    }
-
-    #menu.hidden {
-        display: flex; /* Show menu when button is clicked */
+        text-align: center;
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Space between vertical links */
-    }
-
-    nav ul li a {
-        font-size: 1rem; /* Keep font readable */
+        margin: 0.5rem 0; /* Add spacing between links */
     }
 }
 

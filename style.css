@@ -28,7 +28,7 @@ header h1 {
     font-size: 2rem; /* Elegant large font */
     font-family: 'Playfair Display', serif; /* A sophisticated serif font */
     font-weight: bold;
-    margin: 00.5rem 0;
+    margin: 0.5rem 0;
     color: #222; /* Deep elegant text color */
     letter-spacing: 2px; /* Subtle letter spacing for elegance */
     text-transform: uppercase; /* Classy all caps */
@@ -53,7 +53,6 @@ header::after {
     background-color: #333; /* Matches the text color */
     border-radius: 2px; /* Smooth, rounded ends */
 }
-
 
 nav {
     position: sticky;
@@ -99,37 +98,26 @@ nav ul li a.active {
     border-bottom: 2px solid #222;
 }
 
-#menu-toggle {
-    display: none; /* Hide by default */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.hidden {
-    display: none;
-}
-
 @media (max-width: 768px) {
     /* Header */
     header {
-        padding: 0.1rem 0; /* Minimize padding further */
+        padding: 0.3rem 0; /* Minimize padding further */
     }
 
     header h1 {
-        font-size: 0.8rem; /* Reduce main title size */
+        font-size: 1rem; /* Reduce main title size */
     }
 
     header p {
-        font-size: 0.4rem; /* Reduce subtitle size */
+        font-size: 0.8rem; /* Reduce subtitle size */
     }
 
     /* Navigation Bar */
     nav {
-        top: 75px; /* Adjust based on header height */
-        padding: 0.3rem 0; /* Compact navigation */
+        top: 110px; /* Align with smaller header size */
+        height: auto; /* Adjust height for mobile */
+        background-color: #ffffff; /* Solid color for visibility */
+        border: 1px solid #ccc;
     }
 
     nav ul {
@@ -144,19 +132,7 @@ nav ul li a.active {
     nav ul li a {
         font-size: 1rem; /* Ensure links are legible */
     }
-
-    /* Hide navigation when scrolling */
-    nav.hidden {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-
-    nav.visible {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
-
 
 ul {
     list-style-type: disc; /* Ensures default bullet points */

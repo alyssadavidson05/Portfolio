@@ -1,7 +1,3 @@
-html {
-    scroll-padding-top: 240px; /* Adjust to match the height of your sticky header */
-  }
-  
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,35 +8,37 @@ body {
 }
 
 header {
-    position: sticky;
-    top: 0;
     z-index: 999;
     text-align: center;
     padding: 1.5rem 0;
-    background: #ffffff; /* Classy white background */
-    border-bottom: 1px solid #ccc; /* Subtle border at the bottom */
-    color: #333; /* Elegant dark text */
-    transition: background 0.5s ease, color 0.5s ease;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    background: #ffffff;
+    border-bottom: 1px solid #ccc; 
+    color: #333; 
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+    transform: translateY(0);
 }
 
 /* Main title */
 header h1 {
-    font-size: 2rem; /* Elegant large font */
-    font-family: 'Playfair Display', serif; /* A sophisticated serif font */
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
     margin: 0.5rem 0;
-    color: #222; /* Deep elegant text color */
-    letter-spacing: 2px; /* Subtle letter spacing for elegance */
-    text-transform: uppercase; /* Classy all caps */
+    color: #222; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
 }
 
 /* Subtitle */
 header p {
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif; /* Pairing serif with sans-serif */
+    font-family: 'Roboto', sans-serif; 
     margin: 0;
-    color: #555; /* Softer text color for contrast */
-    font-style: italic; /* Adds a touch of elegance */
+    color: #555; 
+    font-style: italic;
 }
 
 /* Decorative line below the title */
@@ -50,25 +48,28 @@ header::after {
     width: 100px;
     height: 3px;
     margin: 1rem auto 0;
-    background-color: #333; /* Matches the text color */
-    border-radius: 2px; /* Smooth, rounded ends */
+    background-color: #333;
+    border-radius: 2px; 
 }
 
 nav {
-    position: sticky;
-    top: 186px;
     z-index: 999;
     padding: 0.5rem 0;
-    background: #f8f8f8; /* Subtle, clean background */
-    border-top: 1px solid #ccc; /* Matches the header's style */
-    border-bottom: 1px solid #ccc; /* Adds subtle definition */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for elegance */
+    width: 100%;
+    background-color: transparent;
+    background: #f8f8f8; 
+    border-top: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+    transform: translateY(0);
 }
 
 nav ul {
-    list-style: none; /* Remove default bullets */
+    list-style-type: disc; /* bullet points */
+    /* list-style: none; */
     display: flex; /* Horizontal layout */
-    justify-content: center; /* Center the nav items */
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
@@ -78,18 +79,19 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none; /* Remove underline */
-    font-family: 'Roboto', sans-serif; /* Same as header subtitle */
+    text-decoration: none; 
+    font-family: 'Roboto', sans-serif; 
     font-size: 1rem;
-    color: #555; /* Elegant gray color */
+    color: #555; 
     padding: 0.5rem 0;
     transition: color 0.3s ease, border-bottom 0.3s ease;
     border-bottom: 2px solid transparent; /* Subtle hover effect */
 }
 
+/* Creates the hover effect */
 nav ul li a:hover {
-    color: #222; /* Darker color on hover */
-    border-bottom: 2px solid #222; /* Underline effect on hover */
+    color: #222; 
+    border-bottom: 2px solid #222;
 }
 
 nav ul li a.active {
@@ -98,25 +100,26 @@ nav ul li a.active {
     border-bottom: 2px solid #222;
 }
 
+/* Chnage header and nav for mobile functionaility */
 @media (max-width: 768px) {
     /* Header */
     header {
-        padding: 0.3rem 0; /* Minimize padding further */
+        padding: 0.3rem 0;
     }
 
     header h1 {
-        font-size: 1rem; /* Reduce main title size */
+        font-size: 1rem; 
     }
 
     header p {
-        font-size: 0.8rem; /* Reduce subtitle size */
+        font-size: 0.8rem; 
     }
 
     /* Navigation Bar */
     nav {
-        top: 110px; /* Align with smaller header size */
-        height: auto; /* Adjust height for mobile */
-        background-color: #ffffff; /* Solid color for visibility */
+        top: 110px; 
+        height: auto; 
+        background-color: #ffffff; 
         border: 1px solid #ccc;
     }
 
@@ -126,27 +129,27 @@ nav ul li a.active {
     }
 
     nav ul li {
-        margin: 0.3rem 0; /* Add spacing between stacked links */
+        margin: 0.3rem 0; /* Space between nav items */
     }
 
     nav ul li a {
-        font-size: 1rem; /* Ensure links are legible */
+        font-size: 1rem; 
     }
 }
 
 ul {
-    list-style-type: disc; /* Ensures default bullet points */
-    margin-left: 20px;     /* Adds spacing for readability */
+    list-style-type: disc; /* bullet points */
+    margin-left: 20px;     
 }
 
 /* General styling for the about me section */
 #about {
-    max-width: 1200px; /* Limit the width to make it easier to read */
-    margin: 2rem auto; /* Center the section on the page */
-    padding: 1.5rem;
-    background-color: #f9f9f9; /* Light background for contrast */
+    max-width: 1200px; 
+    margin: 2rem auto; 
+    padding: 1.5rem; 
+    background-color: #f9f9f9; 
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Styling for the heading */
@@ -159,14 +162,14 @@ ul {
 
 /* Styling for the paragraph text */
 #about p {
-    line-height: 1.6; /* Increase line spacing for better readability */
-    text-align: justify; /* Align text for a polished look */
-    color: #555; /* Subtle text color */
-    margin-bottom: 1rem; /* Add space between paragraphs */
+    line-height: 1.6;
+    text-align: justify; 
+    color: #555;
+    margin-bottom: 1rem; 
 }
 
 #about ul {
-    list-style-type: disc; /* Bullet points in About section */
+    list-style-type: disc; /* Bullet points */
     margin-left: 20px;
 }
 
@@ -197,7 +200,7 @@ ul {
 }
 
 #projects ul {
-    list-style-type: disc; /* Bullet points in Projects section */
+    list-style-type: disc; /* Bullet points */
     margin-left: 20px;
     padding-left: 20px;
     text-align: left;
@@ -235,20 +238,23 @@ ul {
     border-radius: 5px;
 }
 
+/* Hover effect on cars */
 .project-card a:hover {
     background-color: #555;
 }
 
+/* Adds carousel of images to the FRC Robotics Project */
 .carousel {
     position: relative;
-    max-width: 600px; /* Carousel width */
-    aspect-ratio: 16 / 16; /* Maintain aspect ratio */
+    max-width: 600px;
+    aspect-ratio: 16 / 16;
     overflow: hidden;
-    border-radius: 8px; /* Optional styling */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
 
+/* Image in carousel */
 .carousel-image {
     width: 100%;
     height: 100%;
@@ -260,6 +266,7 @@ ul {
     display: block;
 }
 
+/* Styles teh prev and next buttons on carousel */
 button.prev,
 button.next {
     position: absolute;
@@ -291,24 +298,26 @@ button.next {
     gap: 5px;
     padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 20px; /* Rounded corners for a pill shape */
-    z-index: 10; /* Ensure visibility */
+    border-radius: 20px; /* rounded corners */
+    z-index: 10; 
 }
 
+/* Styles the indicator */
 .indicator {
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.7); /* Contrasting color */
+    background-color: rgba(255, 255, 255, 0.7); 
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+/* Styles A\active state of indicator */
 .indicator.active {
-    background-color: white; /* Brighter color for active state */
+    background-color: white; 
 }
 
-
+/* Styles the letter of recommendations */
 .letter {
     margin-bottom: 2rem;
 }
@@ -319,61 +328,67 @@ iframe {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Features Section Styling */
+/* Website Features Section Styling */
 #features {
-    max-width: 1200px; /* Match width with Projects section */
-    margin: 2rem auto; /* Center and space the section */
-    padding: 1rem; /* Add some padding for spacing */
-    background-color: white; /* Lighter background for contrast with cards */
-    border-radius: 10px; /* Rounded corners for consistency */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1200px; 
+    margin: 2rem auto; 
+    padding: 1rem; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     text-align: center;
 }
 
+/* Header for Features */
 #features h2 {
-    font-family: 'Playfair Display', serif; /* Consistent font */
+    font-family: 'Playfair Display', serif; 
     font-size: 2rem;
-    color: #333; /* Header color to match Projects */
+    color: #333; 
     margin-bottom: 1.5rem;
 }
 
+/* Cards for Features */
 .feature-card {
-    background-color: #f9f9f9; /* Darker background for cards */
-    border: 1px solid #ddd; /* Border for subtle definition */
-    border-radius: 10px; /* Rounded corners for uniformity */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card shadow for a raised effect */
-    padding: 1.5rem; /* Add padding inside cards */
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 1.5rem; 
     margin-bottom: 1.5rem; /* Space between cards */
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+/* Adds hover feature to cards */
 .feature-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
 }
 
+/* Header for the cards */
 .feature-card h3 {
     font-size: 1.5rem;
     font-family: 'Playfair Display', serif;
-    color: #333; /* Match Projects header color */
+    color: #333; 
     margin-bottom: 0.5rem;
 }
 
+/* Paragraphs for the cards */
 .feature-card p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #555; /* Consistent text color */
+    color: #555; 
     margin-bottom: 1rem;
-    text-align: center; /* Align paragraphs for readability */
+    text-align: center; 
 }
 
+/* bullet Items on the cards */
 .feature-card ul {
-    list-style-type: disc; /* Standard bullet points */
-    padding-left: 1.5rem; /* Space for the bullet point alignment */
-    color: #555; /* Text color for bullet items */
+    list-style-type: disc; 
+    padding-left: 1.5rem; 
+    color: #555; 
     margin-bottom: 1rem;
-    text-align: left; /* Align bullets with text */
+    text-align: left; 
 }
 
 .feature-preview {

@@ -115,9 +115,7 @@ nav ul li a.active {
     }
 
     /* Navigation Bar */
-    nav {
-        top: 110px; 
-        height: auto; 
+    nav { 
         background-color: #ffffff; 
         border: 1px solid #ccc;
     }

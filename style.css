@@ -66,8 +66,7 @@ nav {
 }
 
 nav ul {
-    list-style-type: disc; /* bullet points */
-    /* list-style: none; */
+    list-style: none; /* no bullet points */
     display: flex; /* Horizontal layout */
     justify-content: center;
     margin: 0;

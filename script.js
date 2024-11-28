@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 header.style.transform = "translateY(-100%)";
                 nav.style.transform = "translateY(-100%)";
                 nav.style.transform = "translateX(-100%)";
-                nav.style.top = "186px";
+                nav.style.top = `${header.offsetHeight}px`;
                 isHidden = true;
             } else if (currentScrollY < lastScrollY - scrollThreshold && isHidden) {
                 // Shows the nav and header when scrolling up
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 header.style.transform = "translateY(0)";
                 nav.style.transform = "translateY(0)";
                 nav.style.transform = "translateX(0)";
-                nav.style.top = "186px";
+                nav.style.top = `${header.offsetHeight}px`;
                 isHidden = false;
             }
         } else {
